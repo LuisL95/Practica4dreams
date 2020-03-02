@@ -39,11 +39,44 @@
                 <td class= "text-secondary">{{$libro->precio}}</td>
                 <td><a class="btn btn-outline-success btn-lg" href="{{action('LibroController@edit', $libro->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td>
-                  <form action="{{action('LibroController@destroy', $libro->id)}}" method="post">
+                  <button class="btn btn-outline-danger btn-lg" type="button"  data-toggle="modal" data-target="#exampleModalCenter">
+                        <span class="glyphicon glyphicon-trash"></span>
+                  </button>
+                  <!-- Modal -->
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Eliminar</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                ¿Está seguro de que quiere eliminar este registro?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                  <form action="{{action('LibroController@destroy', $libro->id)}}" method="post">  
+                                         {{csrf_field()}}
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        
+                                        <button class="btn btn-outline-danger " type="submit"><span class="glyphicon glyphicon-trash"></span>
+                                        Eliminar
+                                        </button>
+                                          
+                                        
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                <!--   <form action="{{action('LibroController@destroy', $libro->id)}}" method="post">  
                    {{csrf_field()}}
                    <input name="_method" type="hidden" value="DELETE">
- 
-                   <button class="btn btn-outline-danger btn-lg" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+                -->
+                  
                  </td>
                </tr>
                @endforeach 
@@ -89,11 +122,43 @@
                
                 <td><a class="btn btn-outline-success btn-lg" href="{{action('AutorController@edit', $autor->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td>
+                <button class="btn btn-outline-danger btn-lg" type="button"  data-toggle="modal" data-target="#exampleModalCenter">
+                        <span class="glyphicon glyphicon-trash"></span>
+                  </button>
+                  <!-- Modal -->
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Eliminar</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                ¿Está seguro de que quiere eliminar este registro?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                  <form action="{{action('AutorController@destroy', $autor->id)}}" method="post">  
+                                         {{csrf_field()}}
+                                        <input name="_method" type="hidden" value="DELETE">
+                                        
+                                        <button class="btn btn-outline-danger " type="submit"><span class="glyphicon glyphicon-trash"></span>
+                                        Eliminar
+                                        </button>    
+                                  </form>
+
+
+                  <!-- 
                   <form action="{{action('AutorController@destroy', $autor->id)}}" method="post">
                    {{csrf_field()}}
                    <input name="_method" type="hidden" value="DELETE">
  
                    <button class="btn btn-outline-danger btn-lg" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+                   </form>
+                   -->
+
                  </td>
                </tr>
                @endforeach 

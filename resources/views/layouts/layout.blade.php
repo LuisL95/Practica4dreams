@@ -14,6 +14,8 @@
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script language="javascript" type="text/javascript"
+ src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
     <title>layout</title>
 </head>
 <body>
@@ -27,6 +29,8 @@
         border-top: 2px solid #ccc;
 
         }
+
+         label.error { float: none; color: red; padding-left: .5em; vertical-align: middle; font-size: 12px; }
         </style>
     
 </body>
